@@ -12,10 +12,8 @@ node('master') {
 	   stage('Deploy')
 	   {
          echo 'Push to Repo'
+	 echo 'This is MULBr pieline'	   
        }
-	   stage('Archive')
-		archive 'ProjectName/bin/Release/**'
-	}
 	catch (err) {
         currentBuild.result = "FAILURE"
         throw err
