@@ -11,10 +11,15 @@ node('master') {
        }
 	   stage('Deploy')
 	   {
-         echo 'Push to Repo'
-	 echo 'This is MULBr pieline'	   
+          echo 'Push to Repo'
+	      echo 'This is MULBr pieline'	   
        }
-	catch (err) {
+	   stage ('Code Scan')
+	   {
+		  echo 'Sonar Scan'
+	   }  
+	catch (err) 
+	{
         currentBuild.result = "FAILURE"
         throw err
     }
